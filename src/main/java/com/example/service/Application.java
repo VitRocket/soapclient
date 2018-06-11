@@ -2,6 +2,7 @@ package com.example.service;
 
 import com.example.students.GetStudentDetailsRequest;
 import com.example.students.GetStudentDetailsResponse;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +11,14 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class Application {
 
+    @Autowired
+    StudentClient studentClient;
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
+
+
 
     @Bean
     CommandLineRunner lookup(SOAPConnector soapConnector) {
@@ -28,6 +34,12 @@ public class Application {
             System.out.println("Standard : "+response.getStudentDetails().getId());
             System.out.println("Name : "+response.getStudentDetails().getName());
             System.out.println("Address : "+response.getStudentDetails().getPassportNumber());
+
+
+
+            studentClient.sayHello(2);
+
+
         };
     }
 }

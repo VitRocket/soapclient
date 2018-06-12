@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://example.com/students"
-           xmlns:tns="http://example.com/students" elementFormDefault="qualified">
+           targetNamespace="http://example.com/soap/student"
+           xmlns:tns="http://example.com/soap/student" elementFormDefault="qualified">
 
-    <xs:element name="GetStudentDetailsRequest">
+    <xs:element name="StudentRequest">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:int"/>
@@ -12,19 +12,19 @@
         </xs:complexType>
     </xs:element>
 
-    <xs:element name="GetStudentDetailsResponse">
+    <xs:element name="StudentResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="StudentDetails" type="tns:StudentDetails"/>
+                <xs:element name="Student" type="tns:StudentModel"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 
-    <xs:complexType name="StudentDetails">
+    <xs:complexType name="StudentModel">
         <xs:sequence>
             <xs:element name="id" type="xs:int"/>
             <xs:element name="name" type="xs:string"/>
-            <xs:element name="passportNumber" type="xs:string"/>
+            <xs:element name="email" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
 

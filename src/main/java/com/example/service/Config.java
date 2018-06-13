@@ -15,7 +15,7 @@ public class Config {
     @Bean
     public Jaxb2Marshaller jaxb2Marshaller() {
         Jaxb2Marshaller jaxb2Marshaller = new Jaxb2Marshaller();
-        jaxb2Marshaller.setContextPath("com.example.soap.student");
+        jaxb2Marshaller.setContextPath("com.example.soap.model");
         return jaxb2Marshaller;
     }
 

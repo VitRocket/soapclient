@@ -1,8 +1,7 @@
 package com.example;
 
-
 import com.example.soap.StudentClient;
-import com.example.soap.student.StudentModel;
+import com.example.soap.model.StudentModel;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
@@ -19,7 +18,7 @@ public class DemoWorker implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         StudentModel studentModel = studentClient.getStudentById(1);
-        log.info("Student: " + studentModel.getId() + ", " + studentModel.getName() + ", " + studentModel.getEmail());
+        log.info(studentModel.toString());
         // Exit
         System.exit(1);
     }

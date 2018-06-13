@@ -1,10 +1,9 @@
 package com.example.soap;
 
-
-import com.example.soap.student.ObjectFactory;
-import com.example.soap.student.StudentModel;
-import com.example.soap.student.StudentRequest;
-import com.example.soap.student.StudentResponse;
+import com.example.soap.model.ObjectFactory;
+import com.example.soap.model.StudentModel;
+import com.example.soap.model.StudentRequest;
+import com.example.soap.model.StudentResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.oxm.jaxb.Jaxb2Marshaller;
 import org.springframework.stereotype.Component;
@@ -15,7 +14,7 @@ import javax.annotation.PostConstruct;
 @Component
 public class StudentClient {
 
-    private final static String CONTEXT_PATH = "com.example.soap.student";
+    private final static String CONTEXT_PATH = "com.example.soap.model";
 
     @Value("${client.default-uri}")
     private String defaultUri;
